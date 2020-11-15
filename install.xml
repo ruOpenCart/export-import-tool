@@ -1,9 +1,9 @@
 <modification>
-	<name>Export/Import Tool</name>
+	<name>[OCN] Export/Import Tool RU</name>
 	<code>ocn_export_import_tool</code>
-	<version>3.0.0.0</version>
+	<version>3.0.0.0(3.22)</version>
 	<author>Hkr</author>
-	<link>https://forum.opencart.name/</link>
+	<link>https://forum.opencart.name/resources/97/</link>
 	<file path="admin/controller/common/column_left.php">
 		<operation>
 			<search><![CDATA[if ($this->user->hasPermission('access', 'tool/upload')) {]]></search>

@@ -1,0 +1,29 @@
+<modification>
+	<name>Export/Import Tool (V3.22) for OpenCart 3.x</name>
+	<code>Export/Import Tool (V3.22) for OpenCart 3.x</code>
+	<version>3.x-3.22</version>
+	<author>mhccorp.com</author>
+	<link>https://www.mhccorp.com</link>
+	<file path="admin/controller/common/column_left.php">
+		<operation>
+			<search><![CDATA[if ($this->user->hasPermission('access', 'tool/upload')) {]]></search>
+			<add position="before"><![CDATA[
+			if ($this->user->hasPermission('access', 'extension/export_import')) {
+				$maintenance[] = array(
+					'name'	   => $this->language->get('text_export_import'),
+					'href'     => $this->url->link('extension/export_import', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/language/*/common/column_left.php">
+		<operation>
+			<search><![CDATA[$_['text_backup']]]></search>
+			<add position="after"><![CDATA[
+$_['text_export_import']             = 'Export / Import';
+			]]></add>
+		</operation>
+	</file>
+</modification>
